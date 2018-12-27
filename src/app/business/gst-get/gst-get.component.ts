@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BusinessService} from '../business.service';
-import Business from '../models/business.model';
+import Business from '../../models/business.model';
 
 @Component({
   selector: 'app-gst-get',
@@ -8,13 +8,14 @@ import Business from '../models/business.model';
   styleUrls: ['./gst-get.component.css']
 })
 export class GstGetComponent implements OnInit {
-  businesses: Business[];
+  displayedColumns: string[] = ['person_name', 'business_name', 'business_gst_number'];
+  dataSource: Business[];
 
-  constructor(public service: BusinessService) { }
+  constructor(public service: BusinessService) {}
 
   ngOnInit() {
     this.service.getBusinesses().subscribe(
-      ((businessList: Business[]) => this.businesses = businessList)
+      ((businessList: Business[]) => this.dataSource = businessList)
     );
   }
 

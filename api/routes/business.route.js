@@ -8,7 +8,7 @@ const businessRoutes = express.Router();
 let Business = require('../models/Business');
 
 // Defined store route
-businessRoutes.route('/add').post(function (req, res) {
+businessRoutes.route('').post(function (req, res) {
   let business = new Business(req.body);
   business.save()
     .then(business => {
@@ -20,7 +20,7 @@ businessRoutes.route('/add').post(function (req, res) {
 });
 
 // Defined get data(index or listing) route
-businessRoutes.route('/').get(function (req, res) {
+businessRoutes.route('').get(function (req, res) {
   Business.find(function (err, businesses){
     if(err){
       console.log(err);

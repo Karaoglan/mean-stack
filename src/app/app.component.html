@@ -1,21 +1,87 @@
 <ng2-slim-loading-bar color="blue"></ng2-slim-loading-bar>
+<!--
+<mat-toolbar color="primary" class="fixed-header">
+  <mat-toolbar-row>
+    <span>
+      <img src="../assets/img/logo.png" style="width:50px;">
+    </span>
+    <a mat-button routerLink="business" routerLinkActive="active">Business</a>
+    <a mat-button routerLink="business/create">Create Business</a>
+    <a mat-button routerLink="/">Login</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+<main>
+  <router-outlet style="margin-top: 80px;"></router-outlet>
+</main>
+-->
 
-<nav class="navbar navbar-expand-sm bg-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a routerLink="business/create" class="nav-link" routerLinkActive="active">
-          Create Business
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <mat-nav-list>
+      <a mat-list-item>
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">Login</span>
+      </a>
+      <a routerLink="business" routerLinkActive="active" mat-list-item>
+        <mat-icon class="icon">home</mat-icon>
+        <span class="label">Business</span>
+      </a>
+      <a mat-list-item>
+        <mat-icon class="icon">dashboard</mat-icon>
+        <span class="label">Dashboard</span>
+      </a>
+      <a mat-list-item type="button">
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">LogOut</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button>
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <span>
+          <img src="../assets/img/logo.png" style="width:100px;">
+        </span>
+        <a>
+          Just Write :)
         </a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="business" class="nav-link" routerLinkActive="active">
-          Business
-        </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+      </div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+          <li>
+            <a>
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">Login</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="business" routerLinkActive="active">
+              <mat-icon class="icon">home</mat-icon>
+              <span class="label">Business</span>
+            </a>
+          </li>
+          <li>
+            <a routerLink="business/create" routerLinkActive="active">
+              <mat-icon class="icon">create</mat-icon>
+              <span class="label">Post Business</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">LogOut</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <main>
+      <router-outlet style="margin-top: 80px;"></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

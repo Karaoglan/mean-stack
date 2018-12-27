@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import Business from './models/business.model';
 import {Observable} from 'rxjs';
+import Business from '../models/business.model';
 
 @Injectable()
 export class BusinessService {
@@ -21,7 +21,8 @@ export class BusinessService {
       .subscribe(() => console.log('DONE'));
     // TODO add success message here!
   }
-  getBusinesses(): Observable<any> {
+
+  getBusinesses(): Observable<Object> {
     return this.http.get(`${this.uri}`);
   }
 }

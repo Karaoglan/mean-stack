@@ -3,29 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GstAddComponent } from './gst-add/gst-add.component';
-import { GstGetComponent } from './gst-get/gst-get.component';
-import { GstEditComponent } from './gst-edit/gst-edit.component';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {BusinessService} from './business.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GstAddComponent,
-    GstGetComponent,
-    GstEditComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SlimLoadingBarModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatToolbarModule,
+    FlexLayoutModule,
   ],
-  providers: [BusinessService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
