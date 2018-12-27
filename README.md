@@ -1,5 +1,9 @@
 # Angular7crud
 
+## How To run:
+- ng serve -o
+- nodemon server  #in api folder
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
 
 ## Development server
